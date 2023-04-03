@@ -1,0 +1,42 @@
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>questions</title>#}
+{#</head>#}
+{#<body>#}
+{#<h2>Questions list page</h2>#}
+{#</body>#}
+{#</html>#}
+
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{#    <h2>Questions list page</h2>#}
+{#    <ol>#}
+{#        {% for question in questions %}#}
+{#            <li>#}
+                {# <a href="/questions/{{ question.id }}">{{ question.text }}</a>#}
+{#                <a href="{% url 'question_detail' question.id %}">{{ question.text }}</a>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{#    </ol>#}
+{#{% endblock %}#}
+
+ 14 lines (11 sloc) 334 Bytes
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h2>Questions list page </h2>
+    <ol>
+        {% for question in questions %}
+            <li>
+                <a href="{% url 'polls:question_detail' question.id %}">{{ question.text }} - {{ question.pub_date }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+
+{% endblock %}
