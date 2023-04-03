@@ -1,0 +1,16 @@
+{#{% extends 'base.html' %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+<h2>Questions list page</h2>
+<ul>
+{% for question in questions %}
+    <li><a href="{% url 'polls:question_detail' question.id %}">{{ question.question_text }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
