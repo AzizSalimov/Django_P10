@@ -42,11 +42,11 @@
 #     return render(request, 'polls/question_detail.html', context= context)
 
 
-from django.contrib import messages
+
 from django.contrib.messages import SUCCESS, ERROR
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render, redirect
-from django.contrib.messages import constants as message
+
 
 from polls.forms import QuestionForm
 from polls.models import Question, Choice
